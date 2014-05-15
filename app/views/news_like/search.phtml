@@ -1,0 +1,52 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("news_like/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("news_like/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Like</th>
+            <th>News</th>
+            <th>Mem</th>
+            <th>Like Of Date</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $news_like) { ?>
+        <tr>
+            <td><?php echo $news_like->like_id ?></td>
+            <td><?php echo $news_like->news_id ?></td>
+            <td><?php echo $news_like->mem_id ?></td>
+            <td><?php echo $news_like->like_date ?></td>
+            <td><?php echo $this->tag->linkTo(array("news_like/edit/" . $news_like->like_id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("news_like/delete/" . $news_like->like_id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("news_like/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("news_like/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("news_like/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("news_like/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

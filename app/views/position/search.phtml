@@ -1,0 +1,54 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("position/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("position/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Pos</th>
+            <th>Pos Of Name Of Th</th>
+            <th>Pos Of Name Of En</th>
+            <th>Pos Of Order</th>
+            <th>Pos Of Max Of Member</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $position) { ?>
+        <tr>
+            <td><?php echo $position->pos_id ?></td>
+            <td><?php echo $position->pos_name_th ?></td>
+            <td><?php echo $position->pos_name_en ?></td>
+            <td><?php echo $position->pos_order ?></td>
+            <td><?php echo $position->pos_max_member ?></td>
+            <td><?php echo $this->tag->linkTo(array("position/edit/" . $position->pos_id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("position/delete/" . $position->pos_id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("position/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("position/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("position/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("position/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

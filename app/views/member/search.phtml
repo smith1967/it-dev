@@ -1,0 +1,108 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("member/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("member/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Mem</th>
+            <th>Mem Of User</th>
+            <th>Mem Of Pass</th>
+            <th>Mem Of Fname Of Th</th>
+            <th>Mem Of Fname Of En</th>
+            <th>Mem Of Lname Of Th</th>
+            <th>Mem Of Lname Of En</th>
+            <th>Mem Of Disp Of Name</th>
+            <th>Mem Of Birth</th>
+            <th>Mem Of Nation</th>
+            <th>Mem Of Race</th>
+            <th>Mem Of Religion</th>
+            <th>Mem Of Nation</th>
+            <th>Mem Of Position</th>
+            <th>Mem Of Org Of Name</th>
+            <th>Mem Of Org Of Prov</th>
+            <th>Mem Of Email</th>
+            <th>Mem Of Mobile</th>
+            <th>Mem Of Tel</th>
+            <th>Mem Of Fax</th>
+            <th>Mem Of Teach</th>
+            <th>Mem Of Other</th>
+            <th>Mem Of Talent</th>
+            <th>Mem Of Prof1</th>
+            <th>Mem Of Prof2</th>
+            <th>Mem Of Photo</th>
+            <th>Mem Of Reg Of Date</th>
+            <th>Mem Of Active</th>
+            <th>Mem Of Role</th>
+            <th>Mem Of Last Of Login</th>
+            <th>Mem Of Last Of Ip</th>
+            <th>Mem Of Club Of Admin</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $member) { ?>
+        <tr>
+            <td><?php echo $member->mem_id ?></td>
+            <td><?php echo $member->mem_user ?></td>
+            <td><?php echo $member->mem_pass ?></td>
+            <td><?php echo $member->mem_fname_th ?></td>
+            <td><?php echo $member->mem_fname_en ?></td>
+            <td><?php echo $member->mem_lname_th ?></td>
+            <td><?php echo $member->mem_lname_en ?></td>
+            <td><?php echo $member->mem_disp_name ?></td>
+            <td><?php echo $member->mem_birth ?></td>
+            <td><?php echo $member->mem_nation ?></td>
+            <td><?php echo $member->mem_race ?></td>
+            <td><?php echo $member->mem_religion ?></td>
+            <td><?php echo $member->mem_nation_id ?></td>
+            <td><?php echo $member->mem_position ?></td>
+            <td><?php echo $member->mem_org_name ?></td>
+            <td><?php echo $member->mem_org_prov ?></td>
+            <td><?php echo $member->mem_email ?></td>
+            <td><?php echo $member->mem_mobile ?></td>
+            <td><?php echo $member->mem_tel ?></td>
+            <td><?php echo $member->mem_fax ?></td>
+            <td><?php echo $member->mem_teach ?></td>
+            <td><?php echo $member->mem_other ?></td>
+            <td><?php echo $member->mem_talent ?></td>
+            <td><?php echo $member->mem_prof1 ?></td>
+            <td><?php echo $member->mem_prof2 ?></td>
+            <td><?php echo $member->mem_photo ?></td>
+            <td><?php echo $member->mem_reg_date ?></td>
+            <td><?php echo $member->mem_active ?></td>
+            <td><?php echo $member->mem_role ?></td>
+            <td><?php echo $member->mem_last_login ?></td>
+            <td><?php echo $member->mem_last_ip ?></td>
+            <td><?php echo $member->mem_club_admin ?></td>
+            <td><?php echo $this->tag->linkTo(array("member/edit/" . $member->mem_id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("member/delete/" . $member->mem_id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("member/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("member/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("member/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("member/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>
