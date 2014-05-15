@@ -1,0 +1,60 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("news/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("news/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>News</th>
+            <th>News Of Title</th>
+            <th>News Of Detail</th>
+            <th>News Of Url</th>
+            <th>News Of By</th>
+            <th>News Of Level</th>
+            <th>News Of Date</th>
+            <th>News Of Pin</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $new) { ?>
+        <tr>
+            <td><?php echo $new->news_id ?></td>
+            <td><?php echo $new->news_title ?></td>
+            <td><?php echo $new->news_detail ?></td>
+            <td><?php echo $new->news_url ?></td>
+            <td><?php echo $new->news_by ?></td>
+            <td><?php echo $new->news_level ?></td>
+            <td><?php echo $new->news_date ?></td>
+            <td><?php echo $new->news_pin ?></td>
+            <td><?php echo $this->tag->linkTo(array("news/edit/" . $new->news_id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("news/delete/" . $new->news_id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("news/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("news/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("news/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("news/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

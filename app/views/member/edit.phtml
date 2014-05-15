@@ -1,0 +1,273 @@
+
+<?php echo $this->getContent(); ?>
+
+<?php echo $this->tag->form("member/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("member", "Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit member</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="mem_user">Mem Of User</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_user", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_pass">Mem Of Pass</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_pass", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_fname_th">Mem Of Fname Of Th</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_fname_th", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_fname_en">Mem Of Fname Of En</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_fname_en", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_lname_th">Mem Of Lname Of Th</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_lname_th", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_lname_en">Mem Of Lname Of En</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_lname_en", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_disp_name">Mem Of Disp Of Name</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_disp_name", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_birth">Mem Of Birth</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_birth", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_nation">Mem Of Nation</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_nation", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_race">Mem Of Race</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_race", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_religion">Mem Of Religion</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_religion", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_nation_id">Mem Of Nation</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_nation_id", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_position">Mem Of Position</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_position", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_org_name">Mem Of Org Of Name</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_org_name", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_org_prov">Mem Of Org Of Prov</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_org_prov", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_email">Mem Of Email</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_email", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_mobile">Mem Of Mobile</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_mobile")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_tel">Mem Of Tel</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_tel", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_fax">Mem Of Fax</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_fax", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_teach">Mem Of Teach</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_teach", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_other">Mem Of Other</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_other", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_talent">Mem Of Talent</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_talent", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_prof1">Mem Of Prof1</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_prof1", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_prof2">Mem Of Prof2</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_prof2", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_photo">Mem Of Photo</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_photo", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_reg_date">Mem Of Reg Of Date</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_reg_date", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_active">Mem Of Active</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("mem_active")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_role">Mem Of Role</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_role", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_last_login">Mem Of Last Of Login</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_last_login", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_last_ip">Mem Of Last Of Ip</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_last_ip", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="mem_club_admin">Mem Of Club Of Admin</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("mem_club_admin", "type" => "number")) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td><?php echo $this->tag->hiddenField("id") ?></td>
+        <td><?php echo $this->tag->submitButton("Search") ?></td>
+    </tr>
+</table>
+
+</form>

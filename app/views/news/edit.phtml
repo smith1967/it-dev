@@ -1,0 +1,81 @@
+
+<?php echo $this->getContent(); ?>
+
+<?php echo $this->tag->form("news/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("news", "Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit news</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="news_title">News Of Title</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("news_title", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_detail">News Of Detail</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("news_detail", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_url">News Of Url</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("news_url", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_by">News Of By</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("news_by", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_level">News Of Level</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("news_level")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_date">News Of Date</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("news_date", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="news_pin">News Of Pin</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("news_pin")) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td><?php echo $this->tag->hiddenField("id") ?></td>
+        <td><?php echo $this->tag->submitButton("Search") ?></td>
+    </tr>
+</table>
+
+</form>
