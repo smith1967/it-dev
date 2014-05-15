@@ -1,3 +1,4 @@
-/cache/
+/app/cache/
 /config/development/
 /nbproject/
+/app/config/development/
