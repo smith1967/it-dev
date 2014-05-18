@@ -13,13 +13,13 @@
                     <div class="control-group">
                         <label class="control-label" for="email">Username/Email</label>
                         <div class="controls">
-                            {{ text_field('email', 'size': "30", 'class': "input-xlarge") }}
+                            {{ text_field('email', 'size': "30", 'class': "input-control input-xlarge") }}
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="password">Password</label>
                         <div class="controls">
-                            {{ password_field('password', 'size': "30", 'class': "input-xlarge") }}
+                            {{ password_field('password', 'size': "30", 'class': "input-control input-xlarge") }}
                         </div>
                     </div>
                     <div class="form-actions">
