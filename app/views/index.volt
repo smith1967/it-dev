@@ -13,7 +13,7 @@
         <div id="wrap">
         {{ content() }}
         </div>
-        {{ javascript_include('js/jquery.min.js') }}
+        {{ javascript_include('js/jquery-1.11.1.min.js') }}
         {{ javascript_include('bootstrap/js/bootstrap.js') }}
         {{ javascript_include('js/utils.js') }}
     </body>

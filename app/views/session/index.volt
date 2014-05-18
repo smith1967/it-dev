@@ -1,50 +1,42 @@
 
 {{ content() }}
-
-<div class="login-or-signup">
-    <div class="row">
-
-        <div class="span6">
-            <div class="page-header">
-                <h2>Log In</h2>
-            </div>
-            {{ form('session/start', 'class': 'form-inline') }}
-                <fieldset>
-                    <div class="control-group">
-                        <label class="control-label" for="email">Username/Email</label>
-                        <div class="controls">
-                            {{ text_field('email', 'size': "30", 'class': "input-control input-xlarge") }}
+       <div class="login-or-signup">
+            <div class="row">
+                <div class="col-sm-3 col-md-4"></div>
+                <div class="col-sm-5 col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> 
+                            <div class="clearfix">
+                                <div class="pull-left panel-heading"><h4>ลงชื่อเข้าระบบ</h4></div>
+                                <div class="pull-right panel-heading"> 
+                                {{ link_to('session/register', '<h4><span class="glyphicon glyphicon-plus"></span> ลงทะเบียน</h4>' ) }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="password">Password</label>
-                        <div class="controls">
-                            {{ password_field('password', 'size': "30", 'class': "input-control input-xlarge") }}
+                        <div class="panel-body">
+                            {{ form('session/start', 'method': 'post') }}
+{#                            <form role="form" action="/phalcon/auth/session" method="post">#}
+                                <div class="form-group">
+                                    <label for="Email">อีเมล์ (Email)</label>
+                                    {{ text_field('email', 'size': "30", 'class': "form-control input-xlarge") }}
+{#                                    <input type="email" class="form-control" id="Email" placeholder="Enter email" name="email">#}
+                                </div>
+                                <div class="form-group">
+                                    <div class="clearfix">
+                                        <div class="pull-left"><label for="Password">รหัสผ่าน (Password)</label></div>
+                                    </div>
+                       {{ password_field('password', 'size': "30", 'class': "form-control input-xlarge") }}
+     
+{#                                    <input type="password" class="form-control" id="Password" placeholder="Password" name="password">#}
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าระบบ</button>
+                            </form>
                         </div>
+
                     </div>
-                    <div class="form-actions">
-                        {{ submit_button('Login', 'class': 'btn btn-primary btn-large') }}
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-
-        <div class="span6">
-            <div class="page-header">
-                <h2>Don't have an account yet?</h2>
-            </div>
-
-            <p>Create an account offers the following advantages:</p>
-            <ul>
-                <li>Create, track and export your invoices online</li>
-                <li>Gain critical insights into how your business is doing</li>
-                <li>Stay informed about promotions and special packages</li>
-            </ul>
-
-            <div class="clearfix center">
-                {{ link_to('session/register', 'Sign Up', 'class': 'btn btn-primary btn-large btn-success') }}
+                </div>
             </div>
         </div>
 
-    </div>
-</div>
+
