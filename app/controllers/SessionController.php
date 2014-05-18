@@ -7,15 +7,15 @@ class SessionController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Tag::setTitle('Sign Up/Sign In');
+        Tag::setTitle('สมัครสมาชิก/เข้าระบบ');
         parent::initialize();
     }
 
     public function indexAction()
     {
         if (!$this->request->isPost()) {
-            Tag::setDefault('email', 'demo@phalconphp.com');
-            Tag::setDefault('password', 'phalcon');
+            Tag::setDefault('email', 'admin');
+            Tag::setDefault('password', 'admin');
         }
     }
 
@@ -78,7 +78,7 @@ class SessionController extends ControllerBase
             $email = $this->request->getPost('email', 'email');
 
             $password = $this->request->getPost('password');
-            $password = sha1($password);
+            $password = md5($password);
 
             $user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
             if ($user != false) {
