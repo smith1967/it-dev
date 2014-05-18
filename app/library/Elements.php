@@ -74,11 +74,11 @@ class Elements extends Phalcon\Mvc\User\Component
         $auth = $this->session->get('auth');
         if ($auth) {
             $this->_headerMenu['pull-right']['session'] = array(
-                'caption' => 'Log Out',
+                'caption' => 'ออกจากระบบ',
                 'action' => 'end'
             );
         } else {
-            unset($this->_headerMenu['pull-left']['it-dev']);
+            unset($this->_headerMenu['pull-left']['project']);  // disable project menu
         }
 
         echo '<div class="collapse navbar-collapse">';

@@ -5,7 +5,12 @@ use Phalcon\Paginator\Adapter\Model as Paginator;
 
 class MemberController extends ControllerBase
 {
-
+    public function initialize()
+    {
+        $this->view->setTemplateAfter('main');
+        Phalcon\Tag::setTitle('ยินดีต้อนรับ');
+        parent::initialize();  // call controllerBase
+    }
     /**
      * Index action
      */
