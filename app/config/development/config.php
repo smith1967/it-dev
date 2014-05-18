@@ -10,12 +10,12 @@ return new \Phalcon\Config(array(
         'charset'     => 'utf8',        
     ),
     'application' => array(
-        'controllersDir' => __DIR__ . '/../../app/controllers/',
+        'controllersDir' => __DIR__ . '/../../../app/controllers/',
         'modelsDir'      => __DIR__ . '/../../app/models/',
-        'viewsDir'       => __DIR__ . '/../../app/views/',
-        'pluginsDir'     => __DIR__ . '/../../app/plugins/',
-        'libraryDir'     => __DIR__ . '/../../app/library/',
-        'cacheDir'       => __DIR__ . '/../../app/cache/',
+        'viewsDir'       => __DIR__ . '/../../../app/views/',
+        'pluginsDir'     => __DIR__ . '/../../../app/plugins/',
+        'libraryDir'     => __DIR__ . '/../../../app/library/',
+        'cacheDir'       => __DIR__ . '/../../../app/cache/',
         'baseUri'        => '/it-dev/',
     )
 ));
