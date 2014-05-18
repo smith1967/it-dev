@@ -35,15 +35,15 @@ $di->set('view', function () use ($config) {
     $view->registerEngines(array(
         '.volt' => function ($view, $di) use ($config) {
 
-            $volt = new VoltEngine($view, $di);
+    $volt = new VoltEngine($view, $di);
 
-            $volt->setOptions(array(
-                'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
-            ));
+    $volt->setOptions(array(
+        'compiledPath' => $config->application->cacheDir,
+        'compiledSeparator' => '_'
+    ));
 
-            return $volt;
-        },
+    return $volt;
+},
         '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
     ));
 
@@ -79,3 +79,16 @@ $di->set('session', function () {
 
     return $session;
 });
+
+/**
+ * Register the flash service with custom CSS classes
+ */
+$di->set('flash', function() {
+    return new Phalcon\Flash\Direct(array(
+        'error' => 'alert alert-error',
+        'success' => 'alert alert-success',
+        'notice' => 'alert alert-info',
+    ));
+});
+
+

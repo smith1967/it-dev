@@ -20,12 +20,17 @@ try {
     include __DIR__ . "/../app/config/services.php";
 
     /**
+     * Register a user component
+     */
+    $di->set('elements', function() {
+        return new Elements();
+    });
+    /**
      * Handle the request
      */
     $application = new \Phalcon\Mvc\Application($di);
 
     echo $application->handle()->getContent();
-
 } catch (\Exception $e) {
     echo $e->getMessage();
 }
