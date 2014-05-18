@@ -5,7 +5,7 @@ use Phalcon\Mvc\Controller;
 class ControllerBase extends Controller {
 
     protected function initialize() {
-        Phalcon\Tag::prependTitle('INVO | ');
+        Phalcon\Tag::prependTitle('IT-Dev | ');
     }
 
     protected function forward($uri) {
