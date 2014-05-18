@@ -11,25 +11,25 @@ class Elements extends Phalcon\Mvc\User\Component
     private $_headerMenu = array(
         'pull-left' => array(
             'index' => array(
-                'caption' => 'Home',
+                'caption' => 'หน้าหลัก',
                 'action' => 'index'
             ),
-            'invoices' => array(
-                'caption' => 'Invoices',
+            'member' => array(
+                'caption' => 'สมาชิก',
                 'action' => 'index'
             ),
-            'about' => array(
-                'caption' => 'About',
+            'project' => array(
+                'caption' => 'โครงการ',
                 'action' => 'index'
             ),
-            'contact' => array(
-                'caption' => 'Contact',
+            'news' => array(
+                'caption' => 'ข่าวสาร',
                 'action' => 'index'
             ),
         ),
         'pull-right' => array(
             'session' => array(
-                'caption' => 'Log In/Sign Up',
+                'caption' => 'เข้าระบบ/สมัครสมาชิก',
                 'action' => 'index'
             ),
         )
@@ -78,13 +78,13 @@ class Elements extends Phalcon\Mvc\User\Component
                 'action' => 'end'
             );
         } else {
-            unset($this->_headerMenu['pull-left']['invoices']);
+            unset($this->_headerMenu['pull-left']['it-dev']);
         }
 
-        echo '<div class="nav-collapse">';
+        echo '<div class="collapse navbar-collapse">';
         $controllerName = $this->view->getControllerName();
         foreach ($this->_headerMenu as $position => $menu) {
-            echo '<ul class="nav ', $position, '">';
+            echo '<ul class="nav navbar-nav ', $position, '">';
             foreach ($menu as $controller => $option) {
                 if ($controllerName == $controller) {
                     echo '<li class="active">';
