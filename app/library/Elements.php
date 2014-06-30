@@ -5,8 +5,7 @@
  *
  * Helps to build UI elements for the application
  */
-class Elements extends Phalcon\Mvc\User\Component
-{
+class Elements extends Phalcon\Mvc\User\Component {
 
     private $_headerMenu = array(
         'pull-left' => array(
@@ -26,15 +25,18 @@ class Elements extends Phalcon\Mvc\User\Component
                 'caption' => 'ข่าวสาร',
                 'action' => 'index'
             ),
+            'signup' => array(
+                'caption' => 'สมัครสมาชิก',
+                'action' => 'index'
+            ),
         ),
         'pull-right' => array(
             'session' => array(
-                'caption' => 'เข้าระบบ/สมัครสมาชิก',
+                'caption' => 'เข้าระบบ',
                 'action' => 'index'
             ),
         )
     );
-
     private $_tabs = array(
         'Invoices' => array(
             'controller' => 'invoices',
@@ -68,8 +70,7 @@ class Elements extends Phalcon\Mvc\User\Component
      *
      * @return string
      */
-    public function getMenu()
-    {
+    public function getMenu() {
 
         $auth = $this->session->get('auth');
         if ($auth) {
@@ -91,7 +92,7 @@ class Elements extends Phalcon\Mvc\User\Component
                 } else {
                     echo '<li>';
                 }
-                echo Phalcon\Tag::linkTo($controller.'/'.$option['action'], $option['caption']);
+                echo Phalcon\Tag::linkTo($controller . '/' . $option['action'], $option['caption']);
                 echo '</li>';
             }
             echo '</ul>';
@@ -99,8 +100,7 @@ class Elements extends Phalcon\Mvc\User\Component
         echo '</div>';
     }
 
-    public function getTabs()
-    {
+    public function getTabs() {
         $controllerName = $this->view->getControllerName();
         $actionName = $this->view->getActionName();
         echo '<ul class="nav nav-tabs">';
@@ -110,8 +110,9 @@ class Elements extends Phalcon\Mvc\User\Component
             } else {
                 echo '<li>';
             }
-            echo Phalcon\Tag::linkTo($option['controller'].'/'.$option['action'], $caption), '<li>';
+            echo Phalcon\Tag::linkTo($option['controller'] . '/' . $option['action'], $caption), '<li>';
         }
         echo '</ul>';
     }
+
 }

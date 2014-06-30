@@ -283,7 +283,7 @@ class MemberController extends ControllerBase
 
         $member = Member::findFirstBymem_id($mem_id);
         if (!$member) {
-            $this->flash->error("member was not found");
+            $this->flash->error("ไม่มีสมาชิกที่ต้องการในระบบ");
 
             return $this->dispatcher->forward(array(
                 "controller" => "member",

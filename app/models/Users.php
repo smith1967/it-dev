@@ -1,23 +1,22 @@
 <?php
-
-use Phalcon\Mvc\Model\Validator\Email as EmailValidator;
-use Phalcon\Mvc\Model\Validator\Uniqueness as UniquenessValidator;
+use Phalcon\Mvc\Model\Validator\PresenceOf;
+use Phalcon\Mvc\Model\Validator\Email;
+use Phalcon\Mvc\Model\Validator\Uniqueness;
+use Phalcon\Mvc\Model\Validator\Regex;
 
 class Users extends Phalcon\Mvc\Model
 {
     public function validation()
     {
-        $this->validate(new EmailValidator(array(
-            'field' => 'email'
-        )));
-        $this->validate(new UniquenessValidator(array(
-            'field' => 'email',
-            'message' => 'Sorry, The email was registered by another user'
-        )));
-        $this->validate(new UniquenessValidator(array(
+
+        $this->validate(new Uniqueness(array(
             'field' => 'username',
-            'message' => 'Sorry, That username is already taken'
-        )));
+            'message' => 'ชื่อผู้ใช้ถูกใช้ไปแล้วครับ'
+        )));  
+        $this->validate(new Uniqueness(array(
+            'field' => 'email',
+            'message' => 'อีเมล์ถูกใช้ไปแล้วครับ'
+        )));         
         if ($this->validationHasFailed() == true) {
             return false;
         }
