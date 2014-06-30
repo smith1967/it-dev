@@ -85,7 +85,7 @@ $di->set('session', function () {
  */
 $di->set('flash', function() {
     return new Phalcon\Flash\Direct(array(
-        'error' => 'alert alert-error',
+        'error' => 'alert alert-danger',
         'success' => 'alert alert-success',
         'notice' => 'alert alert-info',
     ));

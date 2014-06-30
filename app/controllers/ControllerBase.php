@@ -18,4 +18,13 @@ class ControllerBase extends Controller {
         );
     }
 
+    protected function redirect($uri) {
+        $uriParts = explode('/', $uri);
+        return $this->response->redirect(
+                        array(
+                            'controller' => $uriParts[0],
+                            'action' => $uriParts[1]
+                        )
+        );
+    }    
 }

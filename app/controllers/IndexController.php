@@ -13,8 +13,7 @@ class IndexController extends ControllerBase
     {
         if (!$this->request->isPost()) {
             //$this->getContent();
-            $this->flash->notice('This is a sample application of the Phalcon PHP Framework.
-                Please don\'t provide us any personal information. Thanks');
+            $this->flash->notice('กำลังอยู่ในช่วงเริ่มต้นการศึกษาและพัฒนาระบบข้อมูลด้วย phalcon framework');
         }
     }
 
